@@ -1,1 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Diamonds | Pantheos Global Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="header">
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+        </a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search Free Fire Packages...">
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="freefire.html">Free Fire</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+</header>
+
+<section class="mlbb-banner">
+    <img src="assets/freefire-banner.jpg" alt="Free Fire Banner">
+</section>
+
+<section class="mlbb-order-section">
+
+    <div class="order-layout">
+
+        <div class="order-panel">
+
+            <h2>Free Fire Player Information</h2>
+
+            <input
+                type="text"
+                id="playerId"
+                placeholder="Enter Free Fire UID">
+
+        </div>
+
+        <div class="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-box">
+
+                <p><strong>UID:</strong>
+                    <span id="summaryPlayer">Not Entered</span>
+                </p>
+
+                <p><strong>Selected Package:</strong>
+                    <span id="summaryPackage">None Selected</span>
+                </p>
+
+                <p><strong>Amount:</strong>
+                    <span id="summaryPrice">₹0</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="mlbb-products">
+
+    <div class="product-layout">
+
+        <div class="pass-section">
+
+            <h2>Memberships</h2>
+
+            <div class="pass-grid">
+
+                <div class="pass-card"
+                     onclick="selectPackage('Weekly Membership','179')">
+
+                    <div class="pass-card-content">
+                        <h3>Weekly Membership</h3>
+                        <p>₹179</p>
+                    </div>
+
+                </div>
+
+                <div class="pass-card"
+                     onclick="selectPackage('Monthly Membership','849')">
+
+                    <div class="pass-card-content">
+                        <h3>Monthly Membership</h3>
+                        <p>₹849</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="diamond-section">
+
+            <h2>Free Fire Diamonds</h2>
+
+            <div class="diamond-grid">
+
+                <div class="package-card" onclick="selectPackage('100 Diamonds','89')">
+                    <h3>100 💎</h3>
+                    <p>₹89</p>
+                </div>
+
+                <div class="package-card" onclick="selectPackage('210 Diamonds','179')">
+                    <h3>210 💎</h3>
+                    <p>₹179</p>
+                </div>
+
+                <div class="package-card" onclick="selectPackage('355 Diamonds','299')">
+                    <h3>355 💎</h3>
+                    <p>₹299</p>
+                </div>
+
+                <div class="package-card" onclick="selectPackage('520 Diamonds','429')">
+                    <h3>520 💎</h3>
+                    <p>₹429</p>
+                </div>
+
+                <div class="package-card" onclick="selectPackage('1060 Diamonds','849')">
+                    <h3>1060 💎</h3>
+                    <p>₹849</p>
+                </div>
+
+                <div class="package-card" onclick="selectPackage('2180 Diamonds','1699')">
+                    <h3>2180 💎</h3>
+                    <p>₹1699</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="payment-section">
+
+    <div class="payment-card">
+
+        <h2>Scan & Pay</h2>
+
+        <img src="assets/qr-payment.jpg" alt="QR">
+
+        <p>
+            Complete payment and send screenshot on WhatsApp.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="checkout-section">
+
+    <a href="#"
+       id="orderButton"
+       class="checkout-btn">
+
+       Order on WhatsApp
+
+    </a>
+
+</section>
+
+<footer class="footer">
+
+    <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+
+    <h3>Pantheos Global Store</h3>
+
+    <p>Premium Gaming Top-Ups & Digital Services</p>
+
+</footer>
+
+<script>
+
+const playerId = document.getElementById("playerId");
+const summaryPlayer = document.getElementById("summaryPlayer");
+const summaryPackage = document.getElementById("summaryPackage");
+const summaryPrice = document.getElementById("summaryPrice");
+
+playerId.addEventListener("input", () => {
+    summaryPlayer.textContent =
+    playerId.value || "Not Entered";
+});
+
+function selectPackage(name, price){
+    summaryPackage.textContent = name;
+    summaryPrice.textContent = "₹" + price;
+}
+
+document.getElementById("orderButton")
+.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    const message =
+`🔥 Free Fire Order
+
+UID: ${summaryPlayer.textContent}
+
+Package: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+    window.open(
+`https://wa.me/919310651934?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
