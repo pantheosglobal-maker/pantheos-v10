@@ -1,1 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Top-Up | Pantheos Global Store</title>
 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+        </a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search packages...">
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="mlbb.html">MLBB</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+</header>
+
+<!-- MLBB BANNER -->
+
+<section class="mlbb-banner">
+
+    <img src="assets/mlbb-banner.jpg" alt="MLBB Banner">
+
+</section>
+
+<!-- ORDER SECTION -->
+
+<section class="mlbb-order-section">
+
+    <div class="order-layout">
+
+        <!-- LEFT -->
+
+        <div class="order-panel">
+
+            <h2>Player Information</h2>
+
+            <input
+                type="text"
+                id="playerId"
+                placeholder="Enter Player ID">
+
+            <input
+                type="text"
+                id="serverId"
+                placeholder="Enter Server ID">
+
+            <h3>Order Type</h3>
+
+            <div class="order-type">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="orderType"
+                        value="Direct Top-Up"
+                        checked>
+                    Direct Top-Up
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="orderType"
+                        value="Indirect Top-Up">
+                    Indirect Top-Up
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-box">
+
+                <p>
+                    <strong>Player ID:</strong>
+                    <span id="summaryPlayer">
+                        Not Entered
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Server ID:</strong>
+                    <span id="summaryServer">
+                        Not Entered
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Order Type:</strong>
+                    <span id="summaryType">
+                        Direct Top-Up
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Selected Package:</strong>
+                    <span id="summaryPackage">
+                        None Selected
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Amount:</strong>
+                    <span id="summaryPrice">
+                        ₹0
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- SPECIAL PASSES + DIAMONDS -->
+
+<section class="mlbb-products">
+
+    <div class="product-layout">
+
+        <!-- SPECIAL PASSES -->
+
+        <div class="pass-section">
+
+            <h2>Special Passes</h2>
+
+            <div class="pass-grid">
+
+                <div class="pass-card"
+                     onclick="selectPackage('Weekly Pass','149')">
+
+                    <img src="assets/weekly-pass.jpg"
+                         alt="Weekly Pass">
+
+                    <div class="pass-card-content">
+                        <h3>Weekly Pass</h3>
+                        <p>₹149</p>
+                    </div>
+
+                </div>
+
+                <div class="pass-card"
+                     onclick="selectPackage('Twilight Pass','829')">
+
+                    <img src="assets/twilight-pass.jpg"
+                         alt="Twilight Pass">
+
+                    <div class="pass-card-content">
+                        <h3>Twilight Pass</h3>
+                        <p>₹829</p>
+                    </div>
+
+                </div>
+
+                <div class="pass-card"
+                     onclick="selectPackage('Starlight Normal','249')">
+
+                    <img src="assets/starlight-normal.jpg"
+                         alt="Starlight Normal">
+
+                    <div class="pass-card-content">
+                        <h3>Starlight Normal</h3>
+                        <p>₹249</p>
+                    </div>
+
+                </div>
+
+                <div class="pass-card"
+                     onclick="selectPackage('Starlight Premium','499')">
+
+                    <img src="assets/starlight-premium.jpg"
+                         alt="Starlight Premium">
+
+                    <div class="pass-card-content">
+                        <h3>Starlight Premium</h3>
+                        <p>₹499</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DIAMOND CHART -->
+
+        <div class="diamond-section">
+
+            <h2>MLBB Diamonds</h2>
+
+            <div class="diamond-grid">
+
+                <div class="package-card" onclick="selectPackage('5 Diamonds','13')"><h3>5💎</h3><p>₹13</p></div>
+                <div class="package-card" onclick="selectPackage('11 Diamonds','23')"><h3>11💎</h3><p>₹23</p></div>
+                <div class="package-card" onclick="selectPackage('14 Diamonds','34')"><h3>14💎</h3><p>₹34</p></div>
+                <div class="package-card" onclick="selectPackage('22 Diamonds','44')"><h3>22💎</h3><p>₹44</p></div>
+                <div class="package-card" onclick="selectPackage('28 Diamonds','59')"><h3>28💎</h3><p>₹59</p></div>
+                <div class="package-card" onclick="selectPackage('55 Diamonds','89')"><h3>55💎</h3><p>₹89</p></div>
+
+                <div class="package-card" onclick="selectPackage('86 Diamonds','129')"><h3>86💎</h3><p>₹129</p></div>
+                <div class="package-card" onclick="selectPackage('110 Diamonds','169')"><h3>110💎</h3><p>₹169</p></div>
+                <div class="package-card" onclick="selectPackage('172 Diamonds','259')"><h3>172💎</h3><p>₹259</p></div>
+                <div class="package-card" onclick="selectPackage('257 Diamonds','379')"><h3>257💎</h3><p>₹379</p></div>
+                <div class="package-card" onclick="selectPackage('275 Diamonds','399')"><h3>275💎</h3><p>₹399</p></div>
+                <div class="package-card" onclick="selectPackage('312 Diamonds','469')"><h3>312💎</h3><p>₹469</p></div>
+
+                <div class="package-card" onclick="selectPackage('361 Diamonds','529')"><h3>361💎</h3><p>₹529</p></div>
+                <div class="package-card" onclick="selectPackage('429 Diamonds','634')"><h3>429💎</h3><p>₹634</p></div>
+                <div class="package-card" onclick="selectPackage('451 Diamonds','689')"><h3>451💎</h3><p>₹689</p></div>
+                <div class="package-card" onclick="selectPackage('514 Diamonds','749')"><h3>514💎</h3><p>₹749</p></div>
+                <div class="package-card" onclick="selectPackage('565 Diamonds','819')"><h3>565💎</h3><p>₹819</p></div>
+                <div class="package-card" onclick="selectPackage('706 Diamonds','1029')"><h3>706💎</h3><p>₹1029</p></div>
+
+                <div class="package-card" onclick="selectPackage('720 Diamonds','1059')"><h3>720💎</h3><p>₹1059</p></div>
+                <div class="package-card" onclick="selectPackage('803 Diamonds','1179')"><h3>803💎</h3><p>₹1179</p></div>
+                <div class="package-card" onclick="selectPackage('900 Diamonds','1329')"><h3>900💎</h3><p>₹1329</p></div>
+                <div class="package-card" onclick="selectPackage('1049 Diamonds','1539')"><h3>1049💎</h3><p>₹1539</p></div>
+                <div class="package-card" onclick="selectPackage('1130 Diamonds','1649')"><h3>1130💎</h3><p>₹1649</p></div>
+                <div class="package-card" onclick="selectPackage('1412 Diamonds','2059')"><h3>1412💎</h3><p>₹2059</p></div>
+
+                <div class="package-card" onclick="selectPackage('1503 Diamonds','2199')"><h3>1503💎</h3><p>₹2199</p></div>
+                <div class="package-card" onclick="selectPackage('2195 Diamonds','3089')"><h3>2195💎</h3><p>₹3089</p></div>
+                <div class="package-card" onclick="selectPackage('3688 Diamonds','5139')"><h3>3688💎</h3><p>₹5139</p></div>
+                <div class="package-card" onclick="selectPackage('5532 Diamonds','7649')"><h3>5532💎</h3><p>₹7649</p></div>
+                <div class="package-card" onclick="selectPackage('6046 Diamonds','8399')"><h3>6046💎</h3><p>₹8399</p></div>
+                <div class="package-card" onclick="selectPackage('9288 Diamonds','12899')"><h3>9288💎</h3><p>₹12899</p></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- PAYMENT SECTION -->
+
+<section class="payment-section">
+
+    <div class="payment-card">
+
+        <h2>Scan & Pay</h2>
+
+        <img src="assets/qr-payment.jpg"
+             alt="QR Payment">
+
+        <p>
+            After payment, click the order button below
+            and send the payment screenshot on WhatsApp.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CHECKOUT -->
+
+<section class="checkout-section">
+
+    <a href="#"
+       id="orderButton"
+       class="checkout-btn">
+
+        Order on WhatsApp
+
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <img src="assets/pantheos-logo.PNG"
+         alt="Pantheos">
+
+    <h3>Pantheos Global Store</h3>
+
+    <p>
+        Premium Gaming Top-Ups, OTT Subscriptions,
+        Gift Cards & Social Boosting Services.
+    </p>
+
+    <p>
+        Instant Delivery • Trusted Service • 24/7 Support
+    </p>
+
+</footer>
+
+<!-- WHATSAPP ORDER SYSTEM -->
+
+<script>
+
+const playerId =
+document.getElementById("playerId");
+
+const serverId =
+document.getElementById("serverId");
+
+const summaryPlayer =
+document.getElementById("summaryPlayer");
+
+const summaryServer =
+document.getElementById("summaryServer");
+
+const summaryPackage =
+document.getElementById("summaryPackage");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+const summaryType =
+document.getElementById("summaryType");
+
+playerId.addEventListener(
+"input",
+() => {
+summaryPlayer.textContent =
+playerId.value || "Not Entered";
+});
+
+serverId.addEventListener(
+"input",
+() => {
+summaryServer.textContent =
+serverId.value || "Not Entered";
+});
+
+document
+.querySelectorAll(
+'input[name="orderType"]'
+)
+.forEach(radio => {
+
+radio.addEventListener(
+"change",
+() => {
+
+summaryType.textContent =
+radio.value;
+
+});
+
+});
+
+function selectPackage(
+name,
+price
+){
+
+summaryPackage.textContent =
+name;
+
+summaryPrice.textContent =
+"₹" + price;
+
+}
+
+document
+.getElementById(
+"orderButton"
+)
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const message =
+`🎮 Pantheos Global Store Order
+
+Player ID: ${summaryPlayer.textContent}
+
+Server ID: ${summaryServer.textContent}
+
+Order Type: ${summaryType.textContent}
+
+Package: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+const whatsappNumber =
+"919310651934";
+
+const url =
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+window.open(
+url,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
