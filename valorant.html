@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valorant VP | Pantheos Global Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="header">
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+        </a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search VP Packages...">
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="valorant.html">Valorant</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+</header>
+
+<section class="mlbb-banner">
+    <img src="assets/valorant-banner.jpg" alt="Valorant Banner">
+</section>
+
+<section class="mlbb-order-section">
+
+    <div class="order-layout">
+
+        <div class="order-panel">
+
+            <h2>Valorant Account Information</h2>
+
+            <input
+                type="text"
+                id="playerId"
+                placeholder="Enter Riot ID (Example: Player#1234)">
+
+        </div>
+
+        <div class="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-box">
+
+                <p>
+                    <strong>Riot ID:</strong>
+                    <span id="summaryPlayer">
+                        Not Entered
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Selected Package:</strong>
+                    <span id="summaryPackage">
+                        None Selected
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Amount:</strong>
+                    <span id="summaryPrice">
+                        ₹0
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="mlbb-products">
+
+    <div class="diamond-section">
+
+        <h2>Valorant Points (VP)</h2>
+
+        <div class="diamond-grid">
+
+            <div class="package-card" onclick="selectPackage('475 VP','475')">
+                <h3>475 VP</h3>
+                <p>₹475</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('1100 VP','950')">
+                <h3>1100 VP</h3>
+                <p>₹950</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('2250 VP','1900')">
+                <h3>2250 VP</h3>
+                <p>₹1900</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('4000 VP','2850')">
+                <h3>4000 VP</h3>
+                <p>₹2850</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('5850 VP','3800')">
+                <h3>5850 VP</h3>
+                <p>₹3800</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('12000 VP','9500')">
+                <h3>12000 VP</h3>
+                <p>₹9500</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="payment-section">
+
+    <div class="payment-card">
+
+        <h2>Scan & Pay</h2>
+
+        <img src="assets/qr-payment.jpg" alt="QR Payment">
+
+        <p>
+            Complete payment and send screenshot on WhatsApp.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="checkout-section">
+
+    <a href="#"
+       id="orderButton"
+       class="checkout-btn">
+       Order on WhatsApp
+    </a>
+
+</section>
+
+<footer class="footer">
+
+    <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+
+    <h3>Pantheos Global Store</h3>
+
+    <p>
+        Premium Gaming Top-Ups & Digital Services
+    </p>
+
+</footer>
+
+<script>
+
+const playerId =
+document.getElementById("playerId");
+
+const summaryPlayer =
+document.getElementById("summaryPlayer");
+
+const summaryPackage =
+document.getElementById("summaryPackage");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+playerId.addEventListener(
+"input",
+() => {
+
+summaryPlayer.textContent =
+playerId.value || "Not Entered";
+
+});
+
+function selectPackage(name,price){
+
+summaryPackage.textContent = name;
+summaryPrice.textContent = "₹" + price;
+
+}
+
+document
+.getElementById("orderButton")
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const message =
+`🎯 Valorant Order
+
+Riot ID: ${summaryPlayer.textContent}
+
+Package: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+window.open(
+`https://wa.me/919310651934?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
