@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Cards | Pantheos Global Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="header">
+
+<div class="logo-container">
+<a href="index.html">
+<img src="assets/pantheos-logo.PNG" alt="Pantheos">
+</a>
+</div>
+
+<nav class="navbar">
+<a href="index.html">Home</a>
+<a href="giftcards.html">Gift Cards</a>
+<a href="support.html">Support</a>
+</nav>
+
+</header>
+
+<section class="mlbb-banner">
+<img src="assets/giftcard-banner.jpg" alt="Gift Cards">
+</section>
+
+<section class="mlbb-order-section">
+
+<div class="order-layout">
+
+<div class="order-panel">
+
+<h2>Customer Information</h2>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter Your Name">
+
+</div>
+
+<div class="order-summary">
+
+<h2>Order Summary</h2>
+
+<div class="summary-box">
+
+<p><strong>Name:</strong>
+<span id="summaryName">Not Entered</span></p>
+
+<p><strong>Gift Card:</strong>
+<span id="summaryPackage">None Selected</span></p>
+
+<p><strong>Amount:</strong>
+<span id="summaryPrice">₹0</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="mlbb-products">
+
+<div class="diamond-section">
+
+<h2>Featured Cards</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Amazon ₹1000','995')">
+<h3>Amazon ₹1000</h3>
+<p>₹995</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Google Play ₹1000','980')">
+<h3>Google Play ₹1000</h3>
+<p>₹980</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Steam ₹1000','980')">
+<h3>Steam ₹1000</h3>
+<p>₹980</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('PlayStation ₹1000','1199')">
+<h3>PlayStation ₹1000</h3>
+<p>₹1199</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Food & Dining</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Zomato ₹1000','990')">
+<h3>Zomato</h3>
+<p>₹990</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Swiggy ₹1000','990')">
+<h3>Swiggy</h3>
+<p>₹990</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Dominos ₹1000','929')">
+<h3>Domino's</h3>
+<p>₹929</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Pizza Hut ₹1000','950')">
+<h3>Pizza Hut</h3>
+<p>₹950</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('KFC ₹1000','960')">
+<h3>KFC</h3>
+<p>₹960</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Subway ₹2000','1900')">
+<h3>Subway ₹2000</h3>
+<p>₹1900</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Starbucks ₹1000','960')">
+<h3>Starbucks</h3>
+<p>₹960</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Shopping</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Flipkart ₹1000','990')">
+<h3>Flipkart</h3>
+<p>₹990</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Myntra ₹1000','980')">
+<h3>Myntra</h3>
+<p>₹980</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Nykaa ₹1000','975')">
+<h3>Nykaa</h3>
+<p>₹975</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('FirstCry ₹1000','965')">
+<h3>FirstCry</h3>
+<p>₹965</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Travel & Entertainment</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Uber ₹1000','975')">
+<h3>Uber</h3>
+<p>₹975</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('BookMyShow ₹1000','980')">
+<h3>BookMyShow</h3>
+<p>₹980</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('PVR ₹1000','860')">
+<h3>PVR</h3>
+<p>₹860</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('MakeMyTrip ₹1000','965')">
+<h3>MakeMyTrip</h3>
+<p>₹965</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Goibibo ₹1000','895')">
+<h3>Goibibo</h3>
+<p>₹895</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>VPN & Digital</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('NordVPN 1 Month','150')">
+<h3>NordVPN 1 Month</h3>
+<p>₹150</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('NordVPN 3 Months','350')">
+<h3>NordVPN 3 Months</h3>
+<p>₹350</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('PlayStation ₹3000','3150')">
+<h3>PlayStation ₹3000</h3>
+<p>₹3150</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="payment-section">
+
+<div class="payment-card">
+
+<h2>Scan & Pay</h2>
+
+<img src="assets/qr-payment.jpg" alt="QR Payment">
+
+<p>
+Complete payment and send screenshot on WhatsApp.
+</p>
+
+</div>
+
+</section>
+
+<section class="checkout-section">
+
+<a href="#"
+id="orderButton"
+class="checkout-btn">
+
+Order on WhatsApp
+
+</a>
+
+</section>
+
+<footer class="footer">
+
+<img src="assets/pantheos-logo.PNG" alt="Pantheos">
+
+<h3>Pantheos Global Store</h3>
+
+<p>Gift Cards & Digital Vouchers</p>
+
+</footer>
+
+<script>
+
+const customerName=document.getElementById("customerName");
+const summaryName=document.getElementById("summaryName");
+const summaryPackage=document.getElementById("summaryPackage");
+const summaryPrice=document.getElementById("summaryPrice");
+
+customerName.addEventListener("input",()=>{
+summaryName.textContent=customerName.value||"Not Entered";
+});
+
+function selectPackage(name,price){
+summaryPackage.textContent=name;
+summaryPrice.textContent="₹"+price;
+}
+
+document.getElementById("orderButton")
+.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const message=
+`🎁 Gift Card Order
+
+Name: ${summaryName.textContent}
+
+Gift Card: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+window.open(
+`https://wa.me/919310651934?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
