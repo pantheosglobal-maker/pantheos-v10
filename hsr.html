@@ -1,1 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honkai Star Rail | Pantheos Global Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="header">
+
+<div class="logo-container">
+<a href="index.html">
+<img src="assets/pantheos-logo.PNG" alt="Pantheos">
+</a>
+</div>
+
+<div class="search-container">
+<input type="text" placeholder="Search Oneiric Shards Packages...">
+</div>
+
+<nav class="navbar">
+<a href="index.html">Home</a>
+<a href="hsr.html">HSR</a>
+<a href="support.html">Support</a>
+</nav>
+
+</header>
+
+<section class="mlbb-banner">
+<img src="assets/hsr-banner.jpg" alt="HSR Banner">
+</section>
+
+<section class="mlbb-order-section">
+
+<div class="order-layout">
+
+<div class="order-panel">
+
+<h2>Account Information</h2>
+
+<input
+type="text"
+id="playerId"
+placeholder="Enter UID">
+
+<select id="serverSelect">
+
+<option value="Asia">Asia</option>
+<option value="America">America</option>
+<option value="Europe">Europe</option>
+<option value="TW/HK/MO">TW/HK/MO</option>
+
+</select>
+
+</div>
+
+<div class="order-summary">
+
+<h2>Order Summary</h2>
+
+<div class="summary-box">
+
+<p>
+<strong>UID:</strong>
+<span id="summaryPlayer">
+Not Entered
+</span>
+</p>
+
+<p>
+<strong>Server:</strong>
+<span id="summaryServer">
+Asia
+</span>
+</p>
+
+<p>
+<strong>Package:</strong>
+<span id="summaryPackage">
+None Selected
+</span>
+</p>
+
+<p>
+<strong>Amount:</strong>
+<span id="summaryPrice">
+₹0
+</span>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="mlbb-products">
+
+<div class="product-layout">
+
+<div class="pass-section">
+
+<h2>Special Packs</h2>
+
+<div class="pass-grid">
+
+<div class="pass-card"
+onclick="selectPackage('Express Supply Pass','749')">
+
+<div class="pass-card-content">
+<h3>Express Supply Pass</h3>
+<p>₹749</p>
+</div>
+
+</div>
+
+<div class="pass-card"
+onclick="selectPackage('Nameless Glory','1899')">
+
+<div class="pass-card-content">
+<h3>Nameless Glory</h3>
+<p>₹1899</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Oneiric Shards</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('60 Oneiric Shards','79')">
+<h3>60</h3>
+<p>₹79</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('330 Oneiric Shards','379')">
+<h3>300 + 30</h3>
+<p>₹379</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('1090 Oneiric Shards','949')">
+<h3>980 + 110</h3>
+<p>₹949</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('2240 Oneiric Shards','1899')">
+<h3>1980 + 260</h3>
+<p>₹1899</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('3880 Oneiric Shards','3799')">
+<h3>3280 + 600</h3>
+<p>₹3799</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('8080 Oneiric Shards','7499')">
+<h3>6480 + 1600</h3>
+<p>₹7499</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="payment-section">
+
+<div class="payment-card">
+
+<h2>Scan & Pay</h2>
+
+<img src="assets/qr-payment.jpg" alt="QR Payment">
+
+<p>
+Complete payment and send screenshot on WhatsApp.
+</p>
+
+</div>
+
+</section>
+
+<section class="checkout-section">
+
+<a href="#"
+id="orderButton"
+class="checkout-btn">
+
+Order on WhatsApp
+
+</a>
+
+</section>
+
+<footer class="footer">
+
+<img src="assets/pantheos-logo.PNG" alt="Pantheos">
+
+<h3>Pantheos Global Store</h3>
+
+<p>
+Premium Gaming Top-Ups & Digital Services
+</p>
+
+</footer>
+
+<script>
+
+const playerId =
+document.getElementById("playerId");
+
+const serverSelect =
+document.getElementById("serverSelect");
+
+const summaryPlayer =
+document.getElementById("summaryPlayer");
+
+const summaryServer =
+document.getElementById("summaryServer");
+
+const summaryPackage =
+document.getElementById("summaryPackage");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+playerId.addEventListener(
+"input",
+() => {
+summaryPlayer.textContent =
+playerId.value || "Not Entered";
+});
+
+serverSelect.addEventListener(
+"change",
+() => {
+summaryServer.textContent =
+serverSelect.value;
+});
+
+function selectPackage(name,price){
+
+summaryPackage.textContent = name;
+summaryPrice.textContent = "₹" + price;
+
+}
+
+document
+.getElementById("orderButton")
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const message =
+`🚂 Honkai Star Rail Order
+
+UID: ${summaryPlayer.textContent}
+
+Server: ${summaryServer.textContent}
+
+Package: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+window.open(
+`https://wa.me/919310651934?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
