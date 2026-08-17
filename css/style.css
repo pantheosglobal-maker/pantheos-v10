@@ -558,3 +558,274 @@ body{
         padding:12px 20px;
     }
 }
+/* ====================================
+   MLBB PAGE
+==================================== */
+
+.mlbb-banner{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    border-radius:20px;
+    margin:30px auto;
+}
+
+.mlbb-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.mlbb-order-section{
+    padding:40px 5%;
+}
+
+.order-layout{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:25px;
+}
+
+.order-panel,
+.order-summary{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(0,229,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+}
+
+.order-panel h2,
+.order-summary h2{
+    margin-bottom:20px;
+    color:var(--cyan);
+}
+
+.order-panel input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#151F35;
+    color:#fff;
+}
+
+.order-type{
+    display:flex;
+    gap:20px;
+    margin-top:10px;
+}
+
+.order-type label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+}
+
+.summary-box{
+    background:#101828;
+    border-radius:12px;
+    padding:15px;
+    margin-top:15px;
+}
+
+.summary-box p{
+    margin:8px 0;
+    color:var(--text);
+}
+
+/* ====================================
+   SPECIAL PASSES + DIAMONDS
+==================================== */
+
+.mlbb-products{
+    padding:50px 5%;
+}
+
+.product-layout{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:25px;
+}
+
+.pass-section,
+.diamond-section{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(0,229,255,.15);
+    border-radius:20px;
+    padding:25px;
+    backdrop-filter:blur(10px);
+}
+
+.pass-section h2,
+.diamond-section h2{
+    margin-bottom:20px;
+    color:var(--cyan);
+}
+
+.pass-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.pass-card{
+    background:#101828;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.pass-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(0,229,255,.25);
+}
+
+.pass-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+.pass-card-content{
+    padding:12px;
+    text-align:center;
+}
+
+.pass-card-content h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.pass-card-content p{
+    color:var(--cyan);
+    font-weight:700;
+}
+
+.diamond-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:15px;
+}
+
+.package-card{
+    background:#101828;
+    border:1px solid rgba(0,229,255,.12);
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.package-card:hover{
+    border-color:var(--cyan);
+    transform:translateY(-4px);
+}
+
+.package-card h3{
+    margin-bottom:8px;
+    font-size:16px;
+}
+
+.package-card p{
+    color:var(--cyan);
+    font-weight:700;
+}
+
+/* ====================================
+   PAYMENT SECTION
+==================================== */
+
+.payment-section{
+    padding:50px 5%;
+}
+
+.payment-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(0,229,255,.15);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.payment-card h2{
+    margin-bottom:20px;
+    color:var(--cyan);
+}
+
+.payment-card img{
+    max-width:320px;
+    width:100%;
+    border-radius:15px;
+}
+
+.payment-card p{
+    margin-top:15px;
+    color:var(--text);
+}
+
+/* ====================================
+   CHECKOUT BUTTON
+==================================== */
+
+.checkout-section{
+    padding:40px 5% 80px;
+    text-align:center;
+}
+
+.checkout-btn{
+    display:inline-block;
+    background:linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--cyan2)
+    );
+    color:#000;
+    text-decoration:none;
+    font-weight:700;
+    padding:16px 35px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.checkout-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px rgba(0,229,255,.4);
+}
+
+/* ====================================
+   MLBB MOBILE
+==================================== */
+
+@media(max-width:992px){
+
+    .order-layout{
+        grid-template-columns:1fr;
+    }
+
+    .product-layout{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .pass-grid{
+        grid-template-columns:1fr;
+    }
+
+    .diamond-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .mlbb-banner{
+        height:220px;
+    }
+
+}
