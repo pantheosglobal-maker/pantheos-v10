@@ -1,1 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTT Services | Pantheos Global Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header class="header">
+
+<div class="logo-container">
+<a href="index.html">
+<img src="assets/pantheos-logo.PNG" alt="Pantheos">
+</a>
+</div>
+
+<nav class="navbar">
+<a href="index.html">Home</a>
+<a href="ott.html">OTT</a>
+<a href="support.html">Support</a>
+</nav>
+
+</header>
+
+<section class="mlbb-banner">
+<img src="assets/ott-banner.jpg" alt="OTT Banner">
+</section>
+
+<section class="mlbb-order-section">
+
+<div class="order-layout">
+
+<div class="order-panel">
+
+<h2>Customer Information</h2>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter Your Name">
+
+</div>
+
+<div class="order-summary">
+
+<h2>Order Summary</h2>
+
+<div class="summary-box">
+
+<p>
+<strong>Name:</strong>
+<span id="summaryName">Not Entered</span>
+</p>
+
+<p>
+<strong>Service:</strong>
+<span id="summaryPackage">None Selected</span>
+</p>
+
+<p>
+<strong>Amount:</strong>
+<span id="summaryPrice">₹0</span>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="mlbb-products">
+
+<div class="diamond-section">
+
+<h2>Netflix Premium</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Netflix Shared 1 Month','125')">
+<h3>1 Month Shared</h3>
+<p>₹125</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Netflix Own Mail 1 Month','399')">
+<h3>1 Month Own Mail</h3>
+<p>₹399</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Netflix 1 Year','2160')">
+<h3>1 Year</h3>
+<p>₹2160</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Netflix One Day','30')">
+<h3>1 Day</h3>
+<p>₹30</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Prime Video</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Prime 1 Month','60')">
+<h3>1 Month</h3>
+<p>₹60</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Prime 3 Months','160')">
+<h3>3 Months</h3>
+<p>₹160</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Prime 6 Months','300')">
+<h3>6 Months</h3>
+<p>₹300</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>YouTube Premium</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('YouTube Premium 1 Month','35')">
+<h3>1 Month</h3>
+<p>₹35</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Crunchyroll</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Crunchyroll 1 Month','65')">
+<h3>1 Month</h3>
+<p>₹65</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Crunchyroll 6 Months','190')">
+<h3>6 Months</h3>
+<p>₹190</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Crunchyroll 1 Year','350')">
+<h3>1 Year</h3>
+<p>₹350</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="diamond-section">
+
+<h2>Canva Premium</h2>
+
+<div class="diamond-grid">
+
+<div class="package-card" onclick="selectPackage('Canva 1 Year','160')">
+<h3>1 Year</h3>
+<p>₹160</p>
+</div>
+
+<div class="package-card" onclick="selectPackage('Canva Lifetime','250')">
+<h3>Lifetime</h3>
+<p>₹250</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="payment-section">
+
+<div class="payment-card">
+
+<h2>Scan & Pay</h2>
+
+<img src="assets/qr-payment.jpg" alt="QR Payment">
+
+<p>
+Complete payment and send screenshot on WhatsApp.
+</p>
+
+</div>
+
+</section>
+
+<section class="checkout-section">
+
+<a href="#"
+id="orderButton"
+class="checkout-btn">
+
+Order on WhatsApp
+
+</a>
+
+</section>
+
+<footer class="footer">
+
+<img src="assets/pantheos-logo.PNG" alt="Pantheos">
+
+<h3>Pantheos Global Store</h3>
+
+<p>Premium OTT & Digital Services</p>
+
+</footer>
+
+<script>
+
+const customerName =
+document.getElementById("customerName");
+
+const summaryName =
+document.getElementById("summaryName");
+
+const summaryPackage =
+document.getElementById("summaryPackage");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+customerName.addEventListener(
+"input",
+() => {
+summaryName.textContent =
+customerName.value || "Not Entered";
+});
+
+function selectPackage(name,price){
+
+summaryPackage.textContent = name;
+summaryPrice.textContent = "₹" + price;
+
+}
+
+document
+.getElementById("orderButton")
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const message =
+`📺 OTT Service Order
+
+Name: ${summaryName.textContent}
+
+Service: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+window.open(
+`https://wa.me/919310651934?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
