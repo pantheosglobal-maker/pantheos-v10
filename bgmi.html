@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI UC Top-Up | Pantheos Global Store</title>
 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+        </a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search UC Packages...">
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="mlbb.html">MLBB</a>
+        <a href="bgmi.html">BGMI</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+</header>
+
+<section class="mlbb-banner">
+    <img src="assets/bgmi-banner.PNG" alt="BGMI Banner">
+</section>
+
+<section class="mlbb-order-section">
+
+    <div class="order-layout">
+
+        <div class="order-panel">
+
+            <h2>BGMI Player Information</h2>
+
+            <input
+                type="text"
+                id="playerId"
+                placeholder="Enter Character ID">
+
+            <h3>Order Type</h3>
+
+            <div class="order-type">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="orderType"
+                        value="Android"
+                        checked>
+                    Android
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="orderType"
+                        value="iOS">
+                    iOS
+                </label>
+
+            </div>
+
+        </div>
+
+        <div class="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-box">
+
+                <p>
+                    <strong>Character ID:</strong>
+                    <span id="summaryPlayer">
+                        Not Entered
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Platform:</strong>
+                    <span id="summaryType">
+                        Android
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Selected Package:</strong>
+                    <span id="summaryPackage">
+                        None Selected
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Amount:</strong>
+                    <span id="summaryPrice">
+                        ₹0
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="mlbb-products">
+
+    <div class="diamond-section">
+
+        <h2>BGMI UC Packages</h2>
+
+        <div class="diamond-grid">
+
+            <div class="package-card" onclick="selectPackage('60 UC','75')">
+                <h3>60 UC</h3>
+                <p>₹75</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('325 UC','380')">
+                <h3>325 UC</h3>
+                <p>₹380</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('660 UC','750')">
+                <h3>660 UC</h3>
+                <p>₹750</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('1800 UC','1900')">
+                <h3>1800 UC</h3>
+                <p>₹1900</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('3850 UC','3800')">
+                <h3>3850 UC</h3>
+                <p>₹3800</p>
+            </div>
+
+            <div class="package-card" onclick="selectPackage('8100 UC','7500')">
+                <h3>8100 UC</h3>
+                <p>₹7500</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="payment-section">
+
+    <div class="payment-card">
+
+        <h2>Scan & Pay</h2>
+
+        <img src="assets/qr-payment.jpg" alt="QR">
+
+        <p>
+            Complete payment and send screenshot
+            on WhatsApp.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="checkout-section">
+
+    <a href="#"
+       id="orderButton"
+       class="checkout-btn">
+        Order on WhatsApp
+    </a>
+
+</section>
+
+<footer class="footer">
+
+    <img src="assets/pantheos-logo.PNG" alt="Pantheos">
+
+    <h3>Pantheos Global Store</h3>
+
+    <p>
+        Premium Gaming Top-Ups & Digital Services
+    </p>
+
+</footer>
+
+<script>
+
+const playerId =
+document.getElementById("playerId");
+
+const summaryPlayer =
+document.getElementById("summaryPlayer");
+
+const summaryPackage =
+document.getElementById("summaryPackage");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+const summaryType =
+document.getElementById("summaryType");
+
+playerId.addEventListener(
+"input",
+() => {
+summaryPlayer.textContent =
+playerId.value || "Not Entered";
+});
+
+document
+.querySelectorAll(
+'input[name="orderType"]'
+)
+.forEach(radio => {
+
+radio.addEventListener(
+"change",
+() => {
+
+summaryType.textContent =
+radio.value;
+
+});
+
+});
+
+function selectPackage(
+name,
+price
+){
+
+summaryPackage.textContent =
+name;
+
+summaryPrice.textContent =
+"₹" + price;
+
+}
+
+document
+.getElementById(
+"orderButton"
+)
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const message =
+`🎮 BGMI UC Order
+
+Character ID: ${summaryPlayer.textContent}
+
+Platform: ${summaryType.textContent}
+
+Package: ${summaryPackage.textContent}
+
+Amount: ${summaryPrice.textContent}
+
+Payment Screenshot: Attached`;
+
+const whatsappNumber =
+"919310651934";
+
+const url =
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+window.open(
+url,
+"_blank"
+);
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
